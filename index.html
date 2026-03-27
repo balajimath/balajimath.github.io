@@ -1,714 +1,1006 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Balaji — Research & Insights</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Mono:wght@300;400;500&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet"/>
-  <style>
-    :root {
-      --ink: #0f0e0d;
-      --paper: #f5f0e8;
-      --cream: #ede8dc;
-      --rust: #b84a1e;
-      --gold: #c9953a;
-      --sage: #4a6741;
-      --muted: #7a7060;
-      --border: #d4cfc4;
-    }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Dr. S. Balaji — Research & Insights</title>
+<link
+href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Mono:wght@300;400;500&family=Lora:ital,wght@0,400;0,600;1,400&display=swap"
+rel="stylesheet"/>
 
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+<style>
 
-    html { scroll-behavior: smooth; }
+:root {
+--ink: #0f0e0d;
+--paper: #f5f0e8;
+--cream: #ede8dc;
+--rust: #b84a1e;
+--gold: #c9953a;
+--sage: #4a6741;
+--muted: #7a7060;
+--border: #d4cfc4;
+}
 
-    body {
-      background: var(--paper);
-      color: var(--ink);
-      font-family: 'Lora', Georgia, serif;
-      overflow-x: hidden;
-    }
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-    /* ── Grain overlay ── */
-    body::before {
-      content: '';
-      position: fixed; inset: 0;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
-      pointer-events: none;
-      z-index: 9999;
-      opacity: 0.5;
-    }
+html { scroll-behavior: smooth; }
 
-    /* ── HEADER / NAV ── */
-    header {
-      position: sticky; top: 0;
-      background: var(--paper);
-      border-bottom: 1px solid var(--border);
-      z-index: 100;
-      padding: 0 4vw;
-      display: flex; align-items: center; justify-content: space-between;
-      height: 64px;
-    }
-    .logo {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.5rem;
-      font-weight: 900;
-      letter-spacing: -0.03em;
-      color: var(--ink);
-      text-decoration: none;
-    }
-    .logo span { color: var(--rust); }
+body {
+background: var(--paper);
+color: var(--ink);
+font-family: 'Lora', Georgia, serif;
+overflow-x: hidden;
+}
 
-    nav { display: flex; gap: 2rem; }
-    nav a {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.75rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--muted);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-    nav a:hover { color: var(--rust); }
+/* ── Grain overlay ── */
+body::before {
+content: '';
+position: fixed; inset: 0;
+background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+pointer-events: none;
+z-index: 9999;
+opacity: 0.5;
+}
 
-    /* ── HERO ── */
-    .hero {
-      min-height: 92vh;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      align-items: center;
-      padding: 6rem 4vw 4rem;
-      gap: 4rem;
-      position: relative;
-    }
+/* ── HEADER / NAV ── */
+header {
+position: sticky; top: 0;
+background: var(--paper);
+border-bottom: 1px solid var(--border);
+z-index: 100;
+padding: 0 4vw;
+display: flex; align-items: center; justify-content: space-between;
+height: 64px;
+}
 
-    .hero-text {}
-    .hero-label {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.7rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--rust);
-      margin-bottom: 1.5rem;
-      display: flex; align-items: center; gap: 0.75rem;
-    }
-    .hero-label::before {
-      content: '';
-      display: block; width: 2rem; height: 1px;
-      background: var(--rust);
-    }
+.logo {
+font-family: 'Playfair Display', serif;
+font-size: 1.5rem;
+font-weight: 900;
+letter-spacing: -0.03em;
+color: var(--ink);
+text-decoration: none;
+}
 
-    .hero-name {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(3.5rem, 7vw, 6.5rem);
-      font-weight: 900;
-      line-height: 0.95;
-      letter-spacing: -0.03em;
-      margin-bottom: 1rem;
-    }
-    .hero-name em {
-      font-style: italic;
-      color: var(--rust);
-      display: block;
-    }
+.logo span { color: var(--rust); }
 
-    .hero-tagline {
-      font-size: 1.1rem;
-      line-height: 1.75;
-      color: var(--muted);
-      max-width: 440px;
-      margin-bottom: 2.5rem;
-    }
+nav { display: flex; gap: 2rem; }
 
-    .hero-cta {
-      display: flex; gap: 1rem; flex-wrap: wrap;
-    }
-    .btn {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.75rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      padding: 0.85rem 2rem;
-      border: 1.5px solid var(--ink);
-      background: transparent;
-      color: var(--ink);
-      cursor: pointer;
-      text-decoration: none;
-      transition: all 0.2s;
-    }
-    .btn:hover { background: var(--ink); color: var(--paper); }
-    .btn.filled { background: var(--rust); border-color: var(--rust); color: #fff; }
-    .btn.filled:hover { background: #9a3b14; border-color: #9a3b14; }
+nav a {
+font-family: 'DM Mono', monospace;
+font-size: 0.75rem;
+letter-spacing: 0.08em;
+text-transform: uppercase;
+color: var(--muted);
+text-decoration: none;
+transition: color 0.2s;
+}
 
-    .hero-visual {
-      position: relative;
-      display: flex; align-items: center; justify-content: center;
-    }
-    .hero-portrait-wrap {
-      position: relative;
-      width: min(380px, 100%);
-    }
-    .hero-portrait-box {
-      width: 100%;
-      aspect-ratio: 3/4;
-      background: var(--cream);
-      border: 1.5px solid var(--border);
-      display: flex; align-items: center; justify-content: center;
-      position: relative;
-      overflow: hidden;
-    }
-    .portrait-placeholder {
-      font-family: 'Playfair Display', serif;
-      font-size: 6rem;
-      font-weight: 900;
-      color: var(--border);
-      user-select: none;
-    }
-    .hero-portrait-box::after {
-      content: '';
-      position: absolute; inset: 0;
-      background: linear-gradient(160deg, transparent 60%, rgba(184,74,30,0.08));
-    }
-    .decorative-ring {
-      position: absolute;
-      width: 120%;
-      aspect-ratio: 1;
-      border: 1.5px solid var(--gold);
-      border-radius: 50%;
-      top: -10%; left: -10%;
-      opacity: 0.3;
-      animation: spin 30s linear infinite;
-    }
-    @keyframes spin { to { transform: rotate(360deg); } }
+nav a:hover { color: var(--rust); }
 
-    .hero-stats {
-      display: flex; gap: 2rem;
-      margin-top: 3rem;
-    }
-    .stat { text-align: center; }
-    .stat-num {
-      font-family: 'Playfair Display', serif;
-      font-size: 2rem;
-      font-weight: 900;
-      color: var(--rust);
-      display: block;
-      line-height: 1;
-    }
-    .stat-label {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.65rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-top: 0.25rem;
-    }
+/* ── HERO ── */
+.hero {
+min-height: 92vh;
+display: grid;
+grid-template-columns: 1fr 1fr;
+align-items: center;
+padding: 6rem 4vw 4rem;
+gap: 4rem;
+position: relative;
+}
 
-    /* ── DIVIDER ── */
-    .divider {
-      border: none;
-      border-top: 1px solid var(--border);
-      margin: 0 4vw;
-    }
+.hero-text {}
 
-    /* ── SECTION SHARED ── */
-    section { padding: 5rem 4vw; }
-    .section-label {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.7rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--rust);
-      margin-bottom: 0.75rem;
-    }
-    .section-heading {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(2rem, 4vw, 3rem);
-      font-weight: 900;
-      line-height: 1.1;
-      letter-spacing: -0.02em;
-      margin-bottom: 3rem;
-    }
+.hero-label {
+font-family: 'DM Mono', monospace;
+font-size: 0.7rem;
+letter-spacing: 0.2em;
+text-transform: uppercase;
+color: var(--rust);
+margin-bottom: 1.5rem;
+display: flex; align-items: center; gap: 0.75rem;
+}
 
-    /* ── RESEARCH ── */
-    #research { background: var(--cream); }
-    .research-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 1.5rem;
-    }
-    .research-card {
-      background: var(--paper);
-      border: 1.5px solid var(--border);
-      padding: 2rem;
-      position: relative;
-      transition: transform 0.2s, box-shadow 0.2s;
-      cursor: pointer;
-    }
-    .research-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 32px rgba(15,14,13,0.1);
-    }
-    .research-card::before {
-      content: '';
-      position: absolute; top: 0; left: 0;
-      width: 3px; height: 100%;
-      background: var(--rust);
-      transform: scaleY(0); transform-origin: top;
-      transition: transform 0.2s;
-    }
-    .research-card:hover::before { transform: scaleY(1); }
-    .card-year {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.7rem;
-      color: var(--gold);
-      letter-spacing: 0.1em;
-      margin-bottom: 0.75rem;
-    }
-    .card-title {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.15rem;
-      font-weight: 700;
-      line-height: 1.35;
-      margin-bottom: 0.75rem;
-    }
-    .card-abstract {
-      font-size: 0.9rem;
-      line-height: 1.7;
-      color: var(--muted);
-    }
-    .card-tags {
-      margin-top: 1.25rem;
-      display: flex; flex-wrap: wrap; gap: 0.4rem;
-    }
-    .tag {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.65rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      border: 1px solid var(--border);
-      padding: 0.2rem 0.6rem;
-      color: var(--muted);
-    }
+.hero-label::before {
+content: '';
+display: block; width: 2rem; height: 1px;
+background: var(--rust);
+}
 
-    /* ── UPDATES ── */
-    #updates { background: var(--paper); }
-    .updates-list { display: flex; flex-direction: column; gap: 0; }
-    .update-item {
-      display: grid;
-      grid-template-columns: 120px 1fr;
-      gap: 2rem;
-      padding: 1.75rem 0;
-      border-bottom: 1px solid var(--border);
-      transition: background 0.15s;
-    }
-    .update-item:hover { background: var(--cream); margin: 0 -4vw; padding-left: 4vw; padding-right: 4vw; }
-    .update-date {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.72rem;
-      color: var(--muted);
-      letter-spacing: 0.06em;
-      padding-top: 0.2rem;
-    }
-    .update-type {
-      display: inline-block;
-      font-family: 'DM Mono', monospace;
-      font-size: 0.62rem;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      padding: 0.15rem 0.5rem;
-      margin-bottom: 0.5rem;
-    }
-    .update-type.award { background: rgba(201,149,58,0.15); color: var(--gold); }
-    .update-type.paper { background: rgba(74,103,65,0.15); color: var(--sage); }
-    .update-type.talk  { background: rgba(184,74,30,0.12); color: var(--rust); }
-    .update-type.news  { background: rgba(15,14,13,0.07);  color: var(--muted); }
-    .update-title {
-      font-family: 'Playfair Display', serif;
-      font-size: 1rem;
-      font-weight: 600;
-      line-height: 1.4;
-      margin-bottom: 0.3rem;
-    }
-    .update-desc { font-size: 0.88rem; line-height: 1.6; color: var(--muted); }
+.hero-name {
+font-family: 'Playfair Display', serif;
+font-size: clamp(3.5rem, 7vw, 6.5rem);
+font-weight: 900;
+line-height: 0.95;
+letter-spacing: -0.03em;
+margin-bottom: 1rem;
+}
 
-    /* ── BLOG ── */
-    #blog { background: var(--cream); }
-    .blog-grid {
-      display: grid;
-      grid-template-columns: 2fr 1fr;
-      gap: 2rem;
-    }
-    .blog-featured {
-      border: 1.5px solid var(--border);
-      background: var(--paper);
-      overflow: hidden;
-      transition: box-shadow 0.2s;
-    }
-    .blog-featured:hover { box-shadow: 0 16px 48px rgba(15,14,13,0.12); }
-    .blog-img {
-      width: 100%; aspect-ratio: 16/9;
-      background: linear-gradient(135deg, var(--ink) 0%, #2a2520 50%, var(--rust) 100%);
-      display: flex; align-items: center; justify-content: center;
-    }
-    .blog-img-text {
-      font-family: 'Playfair Display', serif;
-      font-size: 2rem;
-      font-style: italic;
-      color: rgba(245,240,232,0.15);
-      user-select: none;
-    }
-    .blog-card-body { padding: 2rem; }
-    .blog-meta {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.68rem;
-      color: var(--muted);
-      letter-spacing: 0.08em;
-      margin-bottom: 0.75rem;
-    }
-    .blog-title {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.4rem;
-      font-weight: 700;
-      line-height: 1.3;
-      margin-bottom: 0.75rem;
-    }
-    .blog-excerpt { font-size: 0.92rem; line-height: 1.75; color: var(--muted); }
-    .blog-read-more {
-      display: inline-flex; align-items: center; gap: 0.5rem;
-      font-family: 'DM Mono', monospace;
-      font-size: 0.72rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--rust);
-      text-decoration: none;
-      margin-top: 1.25rem;
-    }
-    .blog-read-more::after { content: '→'; transition: transform 0.2s; }
-    .blog-read-more:hover::after { transform: translateX(4px); }
+.hero-name em {
+font-style: italic;
+color: var(--rust);
+display: block;
+}
 
-    .blog-sidebar { display: flex; flex-direction: column; gap: 1rem; }
-    .blog-mini {
-      border: 1.5px solid var(--border);
-      background: var(--paper);
-      padding: 1.5rem;
-      transition: box-shadow 0.2s;
-    }
-    .blog-mini:hover { box-shadow: 0 8px 24px rgba(15,14,13,0.1); }
-    .blog-mini .blog-title { font-size: 1rem; margin-bottom: 0.4rem; }
-    .blog-mini .blog-excerpt { font-size: 0.82rem; }
+.hero-tagline {
+font-size: 1.1rem;
+line-height: 1.75;
+color: var(--muted);
+max-width: 440px;
+margin-bottom: 2.5rem;
+}
 
-    /* ── ABOUT ── */
-    #about {
-      background: var(--ink);
-      color: var(--paper);
-    }
-    #about .section-label { color: var(--gold); }
-    #about .section-heading { color: var(--paper); }
-    .about-grid {
-      display: grid;
-      grid-template-columns: 3fr 2fr;
-      gap: 5rem;
-      align-items: start;
-    }
-    .about-bio { font-size: 1.05rem; line-height: 1.85; color: rgba(245,240,232,0.8); }
-    .about-bio p + p { margin-top: 1.25rem; }
-    .about-bio strong { color: var(--gold); font-weight: 600; }
+.hero-cta {
+display: flex; gap: 1rem; flex-wrap: wrap;
+}
 
-    .about-links { display: flex; flex-direction: column; gap: 0.75rem; }
-    .about-link {
-      display: flex; align-items: center; gap: 1rem;
-      font-family: 'DM Mono', monospace;
-      font-size: 0.8rem;
-      letter-spacing: 0.06em;
-      color: rgba(245,240,232,0.6);
-      text-decoration: none;
-      padding: 0.85rem 1rem;
-      border: 1px solid rgba(245,240,232,0.1);
-      transition: all 0.2s;
-    }
-    .about-link:hover { color: var(--gold); border-color: var(--gold); background: rgba(201,149,58,0.05); }
-    .link-icon { font-size: 1rem; }
+.btn {
+font-family: 'DM Mono', monospace;
+font-size: 0.75rem;
+letter-spacing: 0.1em;
+text-transform: uppercase;
+padding: 0.85rem 2rem;
+border: 1.5px solid var(--ink);
+background: transparent;
+color: var(--ink);
+cursor: pointer;
+text-decoration: none;
+transition: all 0.2s;
+}
 
-    /* ── FOOTER ── */
-    footer {
-      background: var(--ink);
-      border-top: 1px solid rgba(245,240,232,0.08);
-      padding: 2rem 4vw;
-      display: flex; align-items: center; justify-content: space-between;
-      flex-wrap: wrap; gap: 1rem;
-    }
-    .footer-name {
-      font-family: 'Playfair Display', serif;
-      font-size: 1rem;
-      font-weight: 700;
-      color: rgba(245,240,232,0.4);
-    }
-    .footer-copy {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.68rem;
-      color: rgba(245,240,232,0.25);
-      letter-spacing: 0.08em;
-    }
+.btn:hover { background: var(--ink); color: var(--paper); }
 
-    /* ── ANIMATIONS ── */
-    .fade-up {
-      opacity: 0;
-      transform: translateY(24px);
-      transition: opacity 0.6s ease, transform 0.6s ease;
-    }
-    .fade-up.visible {
-      opacity: 1;
-      transform: none;
-    }
+.btn.filled { background: var(--rust); border-color: var(--rust); color: #fff; }
 
-    /* ── RESPONSIVE ── */
-    @media (max-width: 900px) {
-      .hero { grid-template-columns: 1fr; padding-top: 3rem; }
-      .hero-visual { display: none; }
-      .blog-grid { grid-template-columns: 1fr; }
-      .about-grid { grid-template-columns: 1fr; gap: 3rem; }
-      nav { display: none; }
-    }
-    @media (max-width: 600px) {
-      .update-item { grid-template-columns: 1fr; gap: 0.5rem; }
-    }
-  </style>
+.btn.filled:hover { background: #9a3b14; border-color: #9a3b14; }
+
+.hero-visual {
+position: relative;
+display: flex; align-items: center; justify-content: center;
+}
+
+.hero-portrait-wrap {
+position: relative;
+width: min(380px, 100%);
+}
+
+.hero-portrait-box {
+width: 100%;
+aspect-ratio: 3/4;
+background: var(--cream);
+border: 1.5px solid var(--border);
+display: flex; align-items: center; justify-content: center;
+position: relative;
+overflow: hidden;
+}
+
+.portrait-placeholder {
+font-family: 'Playfair Display', serif;
+font-size: 6rem;
+font-weight: 900;
+color: var(--border);
+user-select: none;
+}
+
+.hero-portrait-box::after {
+content: '';
+position: absolute; inset: 0;
+background: linear-gradient(160deg, transparent 60%, rgba(184,74,30,0.08));
+}
+
+.decorative-ring {
+position: absolute;
+width: 120%;
+aspect-ratio: 1;
+border: 1.5px solid var(--gold);
+border-radius: 50%;
+top: -10%; left: -10%;
+opacity: 0.3;
+animation: spin 30s linear infinite;
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.hero-stats {
+display: flex; gap: 2rem;
+margin-top: 3rem;
+}
+
+.stat { text-align: center; }
+
+.stat-num {
+font-family: 'Playfair Display', serif;
+font-size: 2rem;
+font-weight: 900;
+color: var(--rust);
+display: block;
+line-height: 1;
+}
+
+.stat-label {
+font-family: 'DM Mono', monospace;
+font-size: 0.65rem;
+letter-spacing: 0.12em;
+text-transform: uppercase;
+color: var(--muted);
+margin-top: 0.25rem;
+}
+
+/* ── DIVIDER ── */
+.divider {
+border: none;
+border-top: 1px solid var(--border);
+margin: 0 4vw;
+}
+
+/* ── SECTION SHARED ── */
+section { padding: 5rem 4vw; }
+
+.section-label {
+font-family: 'DM Mono', monospace;
+font-size: 0.7rem;
+letter-spacing: 0.2em;
+text-transform: uppercase;
+color: var(--rust);
+margin-bottom: 0.75rem;
+}
+
+.section-heading {
+font-family: 'Playfair Display', serif;
+font-size: clamp(2rem, 4vw, 3rem);
+font-weight: 900;
+line-height: 1.1;
+letter-spacing: -0.02em;
+margin-bottom: 3rem;
+}
+
+/* ── RESEARCH ── */
+#research { background: var(--cream); }
+
+.research-grid {
+display: grid;
+grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+gap: 1.5rem;
+}
+
+.research-card {
+background: var(--paper);
+border: 1.5px solid var(--border);
+padding: 2rem;
+position: relative;
+transition: transform 0.2s, box-shadow 0.2s;
+cursor: pointer;
+}
+
+.research-card:hover {
+transform: translateY(-4px);
+box-shadow: 0 12px 32px rgba(15,14,13,0.1);
+}
+
+.research-card::before {
+content: '';
+position: absolute; top: 0; left: 0;
+width: 3px; height: 100%;
+background: var(--rust);
+transform: scaleY(0); transform-origin: top;
+transition: transform 0.2s;
+}
+
+.research-card:hover::before { transform: scaleY(1); }
+
+.card-year {
+font-family: 'DM Mono', monospace;
+font-size: 0.7rem;
+color: var(--gold);
+letter-spacing: 0.1em;
+margin-bottom: 0.75rem;
+}
+
+.card-title {
+font-family: 'Playfair Display', serif;
+font-size: 1.15rem;
+font-weight: 700;
+line-height: 1.35;
+margin-bottom: 0.75rem;
+}
+
+.card-abstract {
+font-size: 0.9rem;
+line-height: 1.7;
+color: var(--muted);
+}
+
+.card-tags {
+margin-top: 1.25rem;
+display: flex; flex-wrap: wrap; gap: 0.4rem;
+}
+
+.tag {
+font-family: 'DM Mono', monospace;
+font-size: 0.65rem;
+letter-spacing: 0.08em;
+text-transform: uppercase;
+border: 1px solid var(--border);
+padding: 0.2rem 0.6rem;
+color: var(--muted);
+}
+
+/* ── UPDATES ── */
+#updates { background: var(--paper); }
+
+.updates-list { display: flex; flex-direction: column; gap: 0; }
+
+.update-item {
+display: grid;
+grid-template-columns: 120px 1fr;
+gap: 2rem;
+padding: 1.75rem 0;
+border-bottom: 1px solid var(--border);
+transition: background 0.15s;
+}
+
+.update-item:hover { background: var(--cream); margin: 0 -4vw; padding-left: 4vw; padding-right: 4vw; }
+
+.update-date {
+font-family: 'DM Mono', monospace;
+font-size: 0.72rem;
+color: var(--muted);
+letter-spacing: 0.06em;
+padding-top: 0.2rem;
+}
+
+.update-type {
+display: inline-block;
+font-family: 'DM Mono', monospace;
+font-size: 0.62rem;
+text-transform: uppercase;
+letter-spacing: 0.1em;
+padding: 0.15rem 0.5rem;
+margin-bottom: 0.5rem;
+}
+
+.update-type.award { background: rgba(201,149,58,0.15); color: var(--gold); }
+.update-type.paper { background: rgba(74,103,65,0.15); color: var(--sage); }
+.update-type.talk { background: rgba(184,74,30,0.12); color: var(--rust); }
+.update-type.news { background: rgba(15,14,13,0.07); color: var(--muted); }
+.update-type.course { background: rgba(74,103,65,0.12); color: var(--sage); }
+
+.update-title {
+font-family: 'Playfair Display', serif;
+font-size: 1rem;
+font-weight: 600;
+line-height: 1.4;
+margin-bottom: 0.3rem;
+}
+
+.update-desc { font-size: 0.88rem; line-height: 1.6; color: var(--muted); }
+
+/* ── BLOG ── */
+#blog { background: var(--cream); }
+
+.blog-grid {
+display: grid;
+grid-template-columns: 2fr 1fr;
+gap: 2rem;
+}
+
+.blog-featured {
+border: 1.5px solid var(--border);
+background: var(--paper);
+overflow: hidden;
+transition: box-shadow 0.2s;
+}
+
+.blog-featured:hover { box-shadow: 0 16px 48px rgba(15,14,13,0.12); }
+
+.blog-img {
+width: 100%; aspect-ratio: 16/9;
+background: linear-gradient(135deg, var(--ink) 0%, #2a2520 50%, var(--rust) 100%);
+display: flex; align-items: center; justify-content: center;
+}
+
+.blog-img-text {
+font-family: 'Playfair Display', serif;
+font-size: 2rem;
+font-style: italic;
+color: rgba(245,240,232,0.15);
+user-select: none;
+}
+
+.blog-card-body { padding: 2rem; }
+
+.blog-meta {
+font-family: 'DM Mono', monospace;
+font-size: 0.68rem;
+color: var(--muted);
+letter-spacing: 0.08em;
+margin-bottom: 0.75rem;
+}
+
+.blog-title {
+font-family: 'Playfair Display', serif;
+font-size: 1.4rem;
+font-weight: 700;
+line-height: 1.3;
+margin-bottom: 0.75rem;
+}
+
+.blog-excerpt { font-size: 0.92rem; line-height: 1.75; color: var(--muted); }
+
+.blog-read-more {
+display: inline-flex; align-items: center; gap: 0.5rem;
+font-family: 'DM Mono', monospace;
+font-size: 0.72rem;
+letter-spacing: 0.1em;
+text-transform: uppercase;
+color: var(--rust);
+text-decoration: none;
+margin-top: 1.25rem;
+}
+
+.blog-read-more::after { content: '→'; transition: transform 0.2s; }
+.blog-read-more:hover::after { transform: translateX(4px); }
+
+.blog-sidebar { display: flex; flex-direction: column; gap: 1rem; }
+
+.blog-mini {
+border: 1.5px solid var(--border);
+background: var(--paper);
+padding: 1.5rem;
+transition: box-shadow 0.2s;
+}
+
+.blog-mini:hover { box-shadow: 0 8px 24px rgba(15,14,13,0.1); }
+
+.blog-mini .blog-title { font-size: 1rem; margin-bottom: 0.4rem; }
+.blog-mini .blog-excerpt { font-size: 0.82rem; }
+
+/* ── AI PROGRESS ── */
+#ai-progress { background: var(--paper); }
+
+.ai-grid {
+display: grid;
+grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+gap: 1.5rem;
+margin-bottom: 3rem;
+}
+
+.ai-card {
+background: var(--cream);
+border: 1.5px solid var(--border);
+padding: 1.75rem;
+position: relative;
+transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.ai-card:hover {
+transform: translateY(-3px);
+box-shadow: 0 10px 28px rgba(15,14,13,0.09);
+}
+
+.ai-card-icon {
+font-size: 1.75rem;
+margin-bottom: 0.75rem;
+display: block;
+}
+
+.ai-card-title {
+font-family: 'Playfair Display', serif;
+font-size: 1rem;
+font-weight: 700;
+margin-bottom: 0.5rem;
+}
+
+.ai-card-desc {
+font-size: 0.875rem;
+line-height: 1.65;
+color: var(--muted);
+}
+
+/* ── ABOUT ── */
+#about {
+background: var(--ink);
+color: var(--paper);
+}
+
+#about .section-label { color: var(--gold); }
+#about .section-heading { color: var(--paper); }
+
+.about-grid {
+display: grid;
+grid-template-columns: 3fr 2fr;
+gap: 5rem;
+align-items: start;
+}
+
+.about-bio { font-size: 1.05rem; line-height: 1.85; color: rgba(245,240,232,0.8); }
+.about-bio p + p { margin-top: 1.25rem; }
+.about-bio strong { color: var(--gold); font-weight: 600; }
+
+/* Specializations inline list */
+.about-specs {
+display: flex; flex-wrap: wrap; gap: 0.5rem;
+margin-top: 1.25rem;
+}
+
+.about-spec-tag {
+font-family: 'DM Mono', monospace;
+font-size: 0.68rem;
+letter-spacing: 0.08em;
+text-transform: uppercase;
+border: 1px solid rgba(245,240,232,0.2);
+padding: 0.25rem 0.65rem;
+color: rgba(245,240,232,0.5);
+}
+
+.about-links { display: flex; flex-direction: column; gap: 0.75rem; }
+
+.about-link {
+display: flex; align-items: center; gap: 1rem;
+font-family: 'DM Mono', monospace;
+font-size: 0.8rem;
+letter-spacing: 0.06em;
+color: rgba(245,240,232,0.6);
+text-decoration: none;
+padding: 0.85rem 1rem;
+border: 1px solid rgba(245,240,232,0.1);
+transition: all 0.2s;
+}
+
+.about-link:hover { color: var(--gold); border-color: var(--gold); background: rgba(201,149,58,0.05); }
+
+.link-icon { font-size: 1rem; }
+
+/* ── FOOTER ── */
+footer {
+background: var(--ink);
+border-top: 1px solid rgba(245,240,232,0.08);
+padding: 2rem 4vw;
+display: flex; align-items: center; justify-content: space-between;
+flex-wrap: wrap; gap: 1rem;
+}
+
+.footer-name {
+font-family: 'Playfair Display', serif;
+font-size: 1rem;
+font-weight: 700;
+color: rgba(245,240,232,0.4);
+}
+
+.footer-copy {
+font-family: 'DM Mono', monospace;
+font-size: 0.68rem;
+color: rgba(245,240,232,0.25);
+letter-spacing: 0.08em;
+}
+
+/* ── ANIMATIONS ── */
+.fade-up {
+opacity: 0;
+transform: translateY(24px);
+transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-up.visible {
+opacity: 1;
+transform: none;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 900px) {
+.hero { grid-template-columns: 1fr; padding-top: 3rem; }
+.hero-visual { display: none; }
+.blog-grid { grid-template-columns: 1fr; }
+.about-grid { grid-template-columns: 1fr; gap: 3rem; }
+nav { display: none; }
+}
+
+@media (max-width: 600px) {
+.update-item { grid-template-columns: 1fr; gap: 0.5rem; }
+}
+
+</style>
+
 </head>
+
 <body>
 
 <!-- NAV -->
 <header>
-  <a class="logo" href="#">bala<span>ji.</span></a>
-  <nav>
-    <a href="#research">Research</a>
-    <a href="#updates">Updates</a>
-    <a href="#blog">Blog</a>
-    <a href="#about">About</a>
-  </nav>
+<a class="logo" href="#">bala<span>ji.</span></a>
+<nav>
+<a href="#research">Research</a>
+<a href="#updates">Updates</a>
+<a href="#ai-progress">AI Journey</a>
+<a href="#blog">Blog</a>
+<a href="#about">About</a>
+</nav>
 </header>
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-text fade-up">
-    <p class="hero-label">Acamedician · Researcher · Writer</p>
-    <h1 class="hero-name">
-      Balaji<em>Speaks.</em>
-    </h1>
-    <p class="hero-tagline">
-      Exploring the frontiers of knowledge — through rigorous research,
-      thoughtful writing, and a relentless curiosity about the world.
-    </p>
-    <div class="hero-cta">
-      <a href="#research" class="btn filled">View Research</a>
-      <a href="#blog" class="btn">Read the Blog</a>
-    </div>
-    <div class="hero-stats">
-      <div class="stat">
-        <span class="stat-num">37</span>
-        <span class="stat-label">Publications</span>
-      </div>
-      <div class="stat">
-        <span class="stat-num">8</span>
-        <span class="stat-label">Conf. Talks</span>
-      </div>
-      <div class="stat">
-        <span class="stat-num">730+</span>
-        <span class="stat-label">Citations</span>
-      </div>
-    </div>
-  </div>
 
-  <div class="hero-visual">
-    <div class="hero-portrait-wrap">
-      <div class="decorative-ring"></div>
-      <div class="hero-portrait-box">
-        <img src="https://raw.githubusercontent.com/balajimath/balajimath.github.io/main/Balaji-HD.jpg"
-       alt="Balaji"
-       style="width:100%; height:100%; object-fit:cover; display:block;" />
-      </div>
-    </div>
-  </div>
+<div class="hero-text fade-up">
+<p class="hero-label">Mathematician · Researcher · Educator</p>
+<h1 class="hero-name">
+Dr. S.<em>Balaji.</em>
+</h1>
+<p class="hero-tagline">
+Distinguished mathematician with 25 years of academic experience at SASTRA Deemed University, specialising in algorithmic graph theory, combinatorial optimisation, numerical methods, and wavelet approximation.
+</p>
+<div class="hero-cta">
+<a href="#research" class="btn filled">View Research</a>
+<a href="https://raw.githubusercontent.com/balajimath/balajimath.github.io/main/Balaji-CV-2026-March.pdf" class="btn" target="_blank">Download CV</a>
+</div>
+
+<div class="hero-stats">
+<div class="stat">
+<span class="stat-num">37</span>
+<span class="stat-label">Publications</span>
+</div>
+<div class="stat">
+<span class="stat-num">18</span>
+<span class="stat-label">SCI/SCIE</span>
+</div>
+<div class="stat">
+<span class="stat-num">965</span>
+<span class="stat-label">Citations</span>
+</div>
+<div class="stat">
+<span class="stat-num">17</span>
+<span class="stat-label">h-index</span>
+</div>
+</div>
+</div>
+
+<div class="hero-visual">
+<div class="hero-portrait-wrap">
+<div class="decorative-ring"></div>
+<div class="hero-portrait-box">
+<img
+  src="https://raw.githubusercontent.com/balajimath/balajimath.github.io/main/Balaji-HD.jpg"
+  alt="Dr. S. Balaji"
+  style="width:100%; height:100%; object-fit:cover; display:block;" />
+</div>
+</div>
+</div>
+
 </section>
 
 <hr class="divider"/>
 
 <!-- RESEARCH -->
 <section id="research">
-  <p class="section-label">— Selected Works</p>
-  <h2 class="section-heading">Research Highlights</h2>
+<p class="section-label">--- Selected Works</p>
+<h2 class="section-heading">Research Highlights</h2>
 
-  <div class="research-grid">
-    <div class="research-card fade-up">
-      <p class="card-year">2025 · Evolving Systems (Springer)</p>
-      <h3 class="card-title">A hybrid jumping swarm optimization based local search approach for minimum weighted dominating set problem</h3>
-      <p class="card-abstract">The Minimum Weighted Dominating Set problem is a challenging graph optimization problem with applications in network design and communications. This paper proposes a novel discrete swarm optimization-based local search algorithm to effectively explore the solution space and avoid local optima.</p>
-      <div class="card-tags">
-        <span class="tag">Graph Optimization</span>
-        <span class="tag">Swarm Intelligence</span>
-      </div>
-    </div>
+<div class="research-grid">
 
-    <div class="research-card fade-up" style="transition-delay:0.1s">
-      <p class="card-year">2025 · IEEE Conference Proceedings</p>
-      <h3 class="card-title">A Jumping swarm optimization-based hybrid approach for solving the minimum dominating set problem</h3>
-      <p class="card-abstract">The Minimum Dominating Set problem is an NP-hard graph problem with applications in networks and data analysis; this paper introduces JPSMD, a hybrid algorithm combining PSO with a three-phase local search to efficiently explore solutions.</p>
-      <div class="card-tags">
-        <span class="tag">Metaheuristic Optimization</span>
-        <span class="tag">LEACH Network</span>
-      </div>
-    </div>
+<div class="research-card fade-up">
+<p class="card-year">2025 · Evolving Systems (Springer) · IF: 2.7</p>
+<h3 class="card-title">A hybrid jumping swarm optimization based local search approach for minimum weighted dominating set problem</h3>
+<p class="card-abstract">Maheswari, G. &amp; Balaji, S. — Proposes a novel discrete swarm optimisation-based local search algorithm for the Minimum Weighted Dominating Set problem, with applications in network design and communications, effectively exploring the solution space to avoid local optima.</p>
+<div class="card-tags">
+<span class="tag">Graph Optimization</span>
+<span class="tag">Swarm Intelligence</span>
+<span class="tag">MWDS</span>
+</div>
+</div>
 
-    <div class="research-card fade-up" style="transition-delay:0.2s">
-      <p class="card-year">2025 · Projects</p>
-      <h3 class="card-title">Vertex Cover-based Link Monitoring and Backbone Formation in Wireless Ad hoc Networks</h3>
-      <p class="card-abstract">Funded by SASTRA Deemed University - SASTRA-TRR-SASHE-2-12022024 - This Project has made significant contributions to the field of wireless ad hoc networks (WANETs) and graph optimization, introducing the Jumping Particle Swarm Optimization-based Weighted Connected Vertex Cover (JPWCV) algorithm.</p>
-      <div class="card-tags">
-        <span class="tag">Link Monitoring</span>
-        <span class="tag">WANETs</span>
-        <span class="tag">Swarm Intelligence</span>
-      </div>
-    </div>
-  </div>
+<div class="research-card fade-up" style="transition-delay:0.1s">
+<p class="card-year">2024 · Math. Methods in Applied Sciences · IF: 2.9</p>
+<h3 class="card-title">An efficient wavelet-based approximation method for solving nonlinear fractional-time long wave equations</h3>
+<p class="card-abstract">Balaji, S. &amp; Hariharan, G. — An operational matrix approach for solving nonlinear fractional-time long wave equations using wavelet-based methods, contributing to the field of numerical analysis and fractional calculus.</p>
+<div class="card-tags">
+<span class="tag">Wavelet Approximation</span>
+<span class="tag">Fractional Calculus</span>
+<span class="tag">Numerical Methods</span>
+</div>
+</div>
+
+<div class="research-card fade-up" style="transition-delay:0.2s">
+<p class="card-year">2021 · Int. J. Bio-Inspired Computation · IF: 3.5</p>
+<h3 class="card-title">Jumping particle swarm optimisation method for solving minimum weight vertex cover problem</h3>
+<p class="card-abstract">Balaji, S., Vikram, S.T. &amp; Kanagasabapathy, G. — Introduces the JPSO method as a metaheuristic approach to the NP-hard minimum weight vertex cover problem, demonstrating superior performance over conventional methods.</p>
+<div class="card-tags">
+<span class="tag">Vertex Cover</span>
+<span class="tag">Metaheuristic</span>
+<span class="tag">PSO</span>
+</div>
+</div>
+
+<div class="research-card fade-up" style="transition-delay:0.3s">
+<p class="card-year">2016 · J. Computational & Nonlinear Dynamics (ASME) · IF: 1.8</p>
+<h3 class="card-title">A new Bernoulli wavelet operational matrix of derivative method for nonlinear singular Lane-Emden equations arising in astrophysics</h3>
+<p class="card-abstract">Balaji, S. — Develops a Bernoulli wavelet-based operational matrix technique to solve the Lane–Emden equation, a class of singular nonlinear ODEs arising in astrophysics and stellar modelling.</p>
+<div class="card-tags">
+<span class="tag">Bernoulli Wavelets</span>
+<span class="tag">Astrophysics</span>
+<span class="tag">Singular ODE</span>
+</div>
+</div>
+
+<div class="research-card fade-up" style="transition-delay:0.4s">
+<p class="card-year">2025 · Projects · SASTRA-TRR Research Fund</p>
+<h3 class="card-title">Vertex Cover-based Link Monitoring and Backbone Formation in Wireless Ad hoc Networks</h3>
+<p class="card-abstract">Principal Investigator (Feb 2024 – Feb 2025) — Funded at ₹1,59,000. Successfully completed with three SCIE journal publications. Introduced the JPWCV algorithm, making significant contributions to WANETs and graph optimisation.</p>
+<div class="card-tags">
+<span class="tag">Link Monitoring</span>
+<span class="tag">WANETs</span>
+<span class="tag">Swarm Intelligence</span>
+</div>
+</div>
+
+<div class="research-card fade-up" style="transition-delay:0.5s">
+<p class="card-year">2023 · National Academy Science Letters · IF: 1.2</p>
+<h3 class="card-title">A Bio-Inspired Technique for the Maximum Weighted Clique Problem</h3>
+<p class="card-abstract">Revathi, N., Nithyakala, R. &amp; Balaji, S. — Applies bio-inspired computation to the Maximum Weighted Clique problem, offering a nature-analogue heuristic that achieves competitive solution quality on benchmark graphs.</p>
+<div class="card-tags">
+<span class="tag">Clique Problem</span>
+<span class="tag">Bio-Inspired</span>
+<span class="tag">Combinatorial Optimization</span>
+</div>
+</div>
+
+</div>
 </section>
 
 <hr class="divider"/>
 
 <!-- UPDATES -->
 <section id="updates">
-  <p class="section-label">— What's New</p>
-  <h2 class="section-heading">Latest Updates</h2>
+<p class="section-label">--- What's New</p>
+<h2 class="section-heading">Latest Updates</h2>
 
-  <div class="updates-list">
-    <div class="update-item fade-up">
-      <span class="update-date">Mar 2025</span>
-      <div>
-        <span class="update-type award">Award</span>
-        <p class="update-title">Best Paper Award at [Conference Name]</p>
-        <p class="update-desc">Received recognition for outstanding contribution to the field. Add details about the award and what it means to you.</p>
-      </div>
-    </div>
-    <div class="update-item fade-up">
-      <span class="update-date">Feb 2025</span>
-      <div>
-        <span class="update-type paper">Paper</span>
-        <p class="update-title">New Paper Accepted: "[Your Paper Title]"</p>
-        <p class="update-desc">Accepted to [Venue]. This paper investigates [topic] and proposes [contribution].</p>
-      </div>
-    </div>
-    <div class="update-item fade-up">
-      <span class="update-date">Jan 2025</span>
-      <div>
-        <span class="update-type talk">Talk</span>
-        <p class="update-title">Invited Talk at [Institution / Event]</p>
-        <p class="update-desc">Presented recent findings on [topic] to an audience of researchers and practitioners. Slides available on request.</p>
-      </div>
-    </div>
-    <div class="update-item fade-up">
-      <span class="update-date">Dec 2024</span>
-      <div>
-        <span class="update-type news">News</span>
-        <p class="update-title">Joined [New Lab / Program / Fellowship]</p>
-        <p class="update-desc">Excited to begin a new chapter working on [topic] at [institution/organisation].</p>
-      </div>
-    </div>
-  </div>
+<div class="updates-list">
+
+<div class="update-item fade-up">
+<span class="update-date">Jan 2026</span>
+<div>
+<span class="update-type talk">Talk</span>
+<p class="update-title">Invited Lecture: "AI as Teaching Assistant — Practical Experiments in AI-Enhanced Pedagogy"</p>
+<p class="update-desc">Presented at the Second TLC Symposium, SASTRA Deemed University. Explored hands-on experiments in integrating AI tools as pedagogical assistants in mathematics education.</p>
+</div>
+</div>
+
+<div class="update-item fade-up">
+<span class="update-date">Dec 2025</span>
+<div>
+<span class="update-type course">Course</span>
+<p class="update-title">AI-Enhanced Curriculum: B.Sc. / M.Sc. Mathematics &amp; Data Science — SASTRA–Zoho Initiative</p>
+<p class="update-desc">Framed a new AI-enhanced curriculum for B.Sc. and M.Sc. Mathematics and Data Science courses under SASTRA University as part of the Zoho initiative on Building Mathematical Foundations for Modern AI.</p>
+</div>
+</div>
+
+<div class="update-item fade-up">
+<span class="update-date">Oct 2025</span>
+<div>
+<span class="update-type award">Award</span>
+<p class="update-title">Elite + Silver Grade — NPTEL/IIT Kanpur: AI in Industrial &amp; Management Engineering</p>
+<p class="update-desc">Secured Elite + Silver grade in the proctored examination of the NPTEL-AICTE Faculty Development Programme conducted by IIT Kanpur (Aug–Oct 2025).</p>
+</div>
+</div>
+
+<div class="update-item fade-up">
+<span class="update-date">July 2025</span>
+<div>
+<span class="update-type talk">Talk</span>
+<p class="update-title">Workshop Lecture: "AI in Mathematics — Ideas to Experiment in 2025–26"</p>
+<p class="update-desc">Presented at the Workshop on Synergistic Learning of Mathematics for Engineering Programme Students, SASTRA Deemed University.</p>
+</div>
+</div>
+
+<div class="update-item fade-up">
+<span class="update-date">2025</span>
+<div>
+<span class="update-type paper">Paper</span>
+<p class="update-title">New Publication: "A Swarm Intelligence Technique for Link Monitoring Problems in Wireless Ad Hoc Networks"</p>
+<p class="update-desc">Maheswari, G. &amp; Balaji, S. Published in National Academy Science Letters, Vol. 48, pp. 613–618.</p>
+</div>
+</div>
+
+<div class="update-item fade-up">
+<span class="update-date">Dec 2024</span>
+<div>
+<span class="update-type talk">Talk</span>
+<p class="update-title">National Mathematics Day Lecture — Bon Secours College for Women, Thanjavur</p>
+<p class="update-desc">Theme: "Mathematics: The Bridge to Innovation and Progress." Delivered an invited lecture on the pivotal role of mathematics in driving modern innovation.</p>
+</div>
+</div>
+
+<div class="update-item fade-up">
+<span class="update-date">2023</span>
+<div>
+<span class="update-type award">Award</span>
+<p class="update-title">Best Paper Award — IEEE ICACCS 2023, Coimbatore</p>
+<p class="update-desc">Received the Best Paper Award at the IEEE 9th International Conference on Advanced Computing and Communication Systems for the paper on Data Compression Techniques for Biomedical Signals.</p>
+</div>
+</div>
+
+</div>
+</section>
+
+<hr class="divider"/>
+
+<!-- AI JOURNEY -->
+<section id="ai-progress">
+<p class="section-label">--- A Continuing Journey</p>
+<h2 class="section-heading">My Progress in AI Usage</h2>
+
+<div class="ai-grid">
+
+<div class="ai-card fade-up">
+<span class="ai-card-icon">📱</span>
+<p class="ai-card-title">Apps & Software Tools Built</p>
+<p class="ai-card-desc"><strong>SASTRA Mentor Connect App</strong> — a student mentoring platform. <strong>Resume Analyzer App</strong> — compares a student's résumé against a Job Description and highlights missing keywords and skills. Both developed using Claude AI.</p>
+</div>
+
+<div class="ai-card fade-up" style="transition-delay:0.1s">
+<span class="ai-card-icon">🎓</span>
+<p class="ai-card-title">Certifications & FDPs</p>
+<p class="ai-card-desc">NPTEL-AICTE FDP — AI in Industrial &amp; Management Engineering (IIT Kanpur, Elite + Silver, 2025). ChatGPT &amp; AI Hacks with MS Office — Microsoft Certified Training (2024). AICTE-ATAL FDPs in Financial Mathematics &amp; ML, and Big Data &amp; Analytics (2021).</p>
+</div>
+
+<div class="ai-card fade-up" style="transition-delay:0.2s">
+<span class="ai-card-icon">📐</span>
+<p class="ai-card-title">AI-Enhanced Curricula</p>
+<p class="ai-card-desc">Designed AI-enhanced syllabi for B.Tech (ECE) V Semester — Probability and Random Processes (July 2025); and B.Sc./M.Sc. Mathematics &amp; Data Science under SASTRA–Zoho initiative (Dec 2025).</p>
+</div>
+
+<div class="ai-card fade-up" style="transition-delay:0.3s">
+<span class="ai-card-icon">🔬</span>
+<p class="ai-card-title">AI Research Papers (Under Review)</p>
+<p class="ai-card-desc">Three papers under review in SCIE Journals: "An AI-Driven Interactive Interface for Interview Excellence," "Rainfall Forecasting Using Machine Learning and Time Series Models," and "Enhanced Rainfall Prediction using Machine Learning and Actionable Insights."</p>
+</div>
+
+<div class="ai-card fade-up" style="transition-delay:0.4s">
+<span class="ai-card-icon">🖥️</span>
+<p class="ai-card-title">Classroom AI Integration</p>
+<p class="ai-card-desc">Active use of Google Colab and Desmos for classroom teaching. Use of Keptune, ChatGPT, and Claude for school result analyses and academic data-driven insights.</p>
+</div>
+
+<div class="ai-card fade-up" style="transition-delay:0.5s">
+<span class="ai-card-icon">🎤</span>
+<p class="ai-card-title">Invited AI Lectures</p>
+<p class="ai-card-desc">Lectures at SASTRA University on Data-Driven Models in Ocean Engineering (Jan 2025), AI in Mathematics (July 2025), and AI as Teaching Assistant (Jan 2026) — demonstrating a sustained commitment to integrating AI in academic practice.</p>
+</div>
+
+</div>
 </section>
 
 <hr class="divider"/>
 
 <!-- BLOG -->
 <section id="blog">
-  <p class="section-label">— Ideas & Essays</p>
-  <h2 class="section-heading">From the Blog</h2>
+<p class="section-label">--- Ideas & Essays</p>
+<h2 class="section-heading">From the Blog</h2>
 
-  <div class="blog-grid">
-    <div class="blog-featured fade-up">
-      <div class="blog-img">
-        <span class="blog-img-text">Featured</span>
-      </div>
-      <div class="blog-card-body">
-        <p class="blog-meta">March 10, 2025 · 8 min read · Research</p>
-        <h3 class="blog-title">Your Most Important Blog Post Title — Write Something Compelling Here</h3>
-        <p class="blog-excerpt">This is where your featured essay or blog post begins. Replace this placeholder with the opening paragraph of your piece — hook the reader, set the stage, and let your voice shine through.</p>
-        <a href="#" class="blog-read-more">Read More</a>
-      </div>
-    </div>
+<div class="blog-grid">
 
-    <div class="blog-sidebar">
-      <div class="blog-mini fade-up" style="transition-delay:0.1s">
-        <p class="blog-meta">Feb 20, 2025 · 5 min read</p>
-        <h3 class="blog-title">A Shorter Post or Note on [Topic]</h3>
-        <p class="blog-excerpt">Brief excerpt or teaser for this blog post. Keep it one or two sentences.</p>
-        <a href="#" class="blog-read-more">Read</a>
-      </div>
-      <div class="blog-mini fade-up" style="transition-delay:0.2s">
-        <p class="blog-meta">Jan 5, 2025 · 6 min read</p>
-        <h3 class="blog-title">Reflections on [Research Area / Experience]</h3>
-        <p class="blog-excerpt">A short teaser introducing what this post is about and why it matters to you.</p>
-        <a href="#" class="blog-read-more">Read</a>
-      </div>
-      <div class="blog-mini fade-up" style="transition-delay:0.3s">
-        <p class="blog-meta">Dec 2024 · 4 min read</p>
-        <h3 class="blog-title">Opinion: The Future of [Your Field]</h3>
-        <p class="blog-excerpt">Your perspective on where the field is heading and what it means for researchers.</p>
-        <a href="#" class="blog-read-more">Read</a>
-      </div>
-    </div>
-  </div>
+<div class="blog-featured fade-up">
+<div class="blog-img">
+<span class="blog-img-text">Featured</span>
+</div>
+<div class="blog-card-body">
+<p class="blog-meta">Jan 2026 · AI-Enhanced Pedagogy · SASTRA TLC Symposium</p>
+<h3 class="blog-title">AI as Teaching Assistant — Practical Experiments in AI-Enhanced Pedagogy</h3>
+<p class="blog-excerpt">What does it mean for a mathematician to invite AI into the classroom — not as a novelty, but as a genuine pedagogical collaborator? In this session at SASTRA's Second TLC Symposium, I shared hands-on experiments in using AI tools to transform how mathematics is taught, assessed, and experienced by students.</p>
+<a href="#" class="blog-read-more">Read More</a>
+</div>
+</div>
+
+<div class="blog-sidebar">
+
+<div class="blog-mini fade-up" style="transition-delay:0.1s">
+<p class="blog-meta">July 2025 · AI in Mathematics</p>
+<h3 class="blog-title">AI in Mathematics — Ideas to Experiment in 2025–26</h3>
+<p class="blog-excerpt">A workshop lecture exploring practical AI experiments for engineering mathematics courses.</p>
+<a href="#" class="blog-read-more">Read</a>
+</div>
+
+<div class="blog-mini fade-up" style="transition-delay:0.2s">
+<p class="blog-meta">Dec 2024 · National Mathematics Day</p>
+<h3 class="blog-title">Mathematics: The Bridge to Innovation and Progress</h3>
+<p class="blog-excerpt">Reflections on the enduring relevance of mathematics in driving modern scientific and technological progress.</p>
+<a href="#" class="blog-read-more">Read</a>
+</div>
+
+<div class="blog-mini fade-up" style="transition-delay:0.3s">
+<p class="blog-meta">Jan 2024 · Scientific Machine Learning</p>
+<h3 class="blog-title">Transforming Science through Data-Driven Models</h3>
+<p class="blog-excerpt">A five-day workshop on scientific machine learning in ocean engineering — bridging mathematical rigour and modern ML techniques.</p>
+<a href="#" class="blog-read-more">Read</a>
+</div>
+
+</div>
+
+</div>
 </section>
 
 <!-- ABOUT -->
 <section id="about">
-  <p class="section-label">— Who I Am</p>
-  <h2 class="section-heading">About Balaji</h2>
-  <div class="about-grid">
-    <div class="about-bio fade-up">
-      <p>I'm <strong>Balaji</strong>, a researcher based in [Your Location] working at the intersection of [Field A] and [Field B]. My work focuses on [core research theme] — with the goal of [broader impact or vision].</p>
-      <p>Currently [PhD candidate / Postdoc / Faculty] at <strong>[Your Institution]</strong>, affiliated with the [Lab Name] lab. My research is supported by [Funding / Fellowship] and I collaborate with groups at [Collaborating Institutions].</p>
-      <p>Outside the lab, I write about [topics], think about [things], and try to make complex ideas accessible to broader audiences. If any of this resonates, I'd love to connect.</p>
-    </div>
-    <div class="fade-up" style="transition-delay:0.15s">
-      <div class="about-links">
-        <a href="mailto:balaji@example.com" class="about-link">
-          <span class="link-icon">✉</span> balaji@example.com
-        </a>
-        <a href="https://www.scopus.com/authid/detail.uri?authorId=35760809700&origin=resultslist" class="about-link">
-          <span class="link-icon">🎓</span> Scopus
-        </a>
-        <a href="https://scholar.google.com/citations?user=BAqUuHsAAAAJ&hl=en&authuser=2" class="about-link">
-          <span class="link-icon">𝕏</span> Google Scholar
-        </a>
-        <a href="#" class="about-link">
-          <span class="link-icon">💼</span> LinkedIn
-        </a>
-        <a href="https://github.com/balajimath/balajimath.github.io" class="about-link">
-          <span class="link-icon">🐙</span> Webpage
-        </a>
-       <a href="https://raw.githubusercontent.com/balajimath/balajimath.github.io/main/Balaji-CV-2026-March.pdf" class="about-link">
-          <span class="link-icon">📄</span> Download CV
-        </a>
-      </div>
-    </div>
-  </div>
+<p class="section-label">--- Who I Am</p>
+<h2 class="section-heading">About Dr. Balaji</h2>
+
+<div class="about-grid">
+
+<div class="about-bio fade-up">
+<p>I'm <strong>Dr. S. Balaji</strong>, Professor of Mathematics at <strong>SASTRA Deemed University</strong>, Thanjavur, Tamil Nadu — where I have served continuously for over 21 years. I hold a Ph.D. in Mathematics from SASTRA (2012), with a thesis on "Effective Heuristics on Graph Optimization Problems" selected in the pool of best theses.</p>
+
+<p>My research spans <strong>algorithmic graph theory</strong>, <strong>combinatorial optimisation</strong>, <strong>numerical methods</strong>, and <strong>wavelet approximation</strong>. With 37 publications (18 SCI/SCIE), an h-index of 17, and over 965 citations, I have contributed across graph optimisation, swarm intelligence, fractional calculus, and bio-inspired computing.</p>
+
+<p>I supervise doctoral scholars — two Ph.D.s awarded (Dr. S.T. Vikram, 2024; Dr. N. Revathi, 2025) and two ongoing — as well as 45+ M.Sc. projects in data science, machine learning, and graph optimisation. I am a peer reviewer for Elsevier, Springer, Taylor &amp; Francis, and Hindawi, and serve as a Ph.D. External Examiner for Bharathiyar University.</p>
+
+<p>Beyond research, I actively integrate <strong>AI and data science</strong> into mathematics education, having developed two AI-powered student apps, designed AI-enhanced curricula, and earned an Elite + Silver grade in IIT Kanpur's AI for Engineering FDP.</p>
+
+<div class="about-specs">
+<span class="about-spec-tag">Algorithmic Graph Theory</span>
+<span class="about-spec-tag">Combinatorial Optimization</span>
+<span class="about-spec-tag">Numerical Methods</span>
+<span class="about-spec-tag">Wavelet Approximation</span>
+<span class="about-spec-tag">Swarm Intelligence</span>
+<span class="about-spec-tag">AI in Education</span>
+</div>
+</div>
+
+<div class="fade-up" style="transition-delay:0.15s">
+<div class="about-links">
+
+<a href="mailto:drbalajimath@gmail.com" class="about-link">
+<span class="link-icon">✉</span> drbalajimath@gmail.com
+</a>
+
+<a href="tel:+919843508332" class="about-link">
+<span class="link-icon">📞</span> +91 98435 08332
+</a>
+
+<a href="https://orcid.org" class="about-link" target="_blank">
+<span class="link-icon">🎓</span> ORCiD Profile
+</a>
+
+<a href="https://www.scopus.com/authid/detail.uri?authorId=35760809700&origin=resultslist" class="about-link" target="_blank">
+<span class="link-icon">🔬</span> Scopus
+</a>
+
+<a href="https://scholar.google.com/citations?user=BAqUuHsAAAAJ&hl=en&authuser=2" class="about-link" target="_blank">
+<span class="link-icon">📚</span> Google Scholar
+</a>
+
+<a href="https://github.com/balajimath/balajimath.github.io" class="about-link" target="_blank">
+<span class="link-icon">🌐</span> University/Web Profile
+</a>
+
+<a href="https://raw.githubusercontent.com/balajimath/balajimath.github.io/main/Balaji-CV-2026-March.pdf" class="about-link" target="_blank">
+<span class="link-icon">📄</span> Download CV
+</a>
+
+</div>
+</div>
+
+</div>
 </section>
 
 <!-- FOOTER -->
 <footer>
-  <span class="footer-name">Balaji</span>
-  <span class="footer-copy">© 2025 · All rights reserved</span>
+<span class="footer-name">Dr. S. Balaji</span>
+<span class="footer-copy">© 2026 · SASTRA Deemed University, Thanjavur · All rights reserved</span>
 </footer>
 
 <script>
-  // Intersection Observer for fade-up animations
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.classList.add('visible');
-        observer.unobserve(e.target);
-      }
-    });
-  }, { threshold: 0.12 });
+// Intersection Observer for fade-up animations
+const observer = new IntersectionObserver((entries) => {
+entries.forEach(e => {
+if (e.isIntersecting) {
+e.target.classList.add('visible');
+observer.unobserve(e.target);
+}
+});
+}, { threshold: 0.12 });
 
-  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 </script>
+
 </body>
+
 </html>

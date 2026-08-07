@@ -34,7 +34,7 @@ rel="stylesheet"/>
 
        title  = what visitors see (required)
        code   = course code, or leave as ""  (optional)
-       type   = Notes / Question Paper / Solutions / Slides / Reference / Lab
+       type   = Notes / Question Bank / Question Paper / Solutions / Slides / Reference
        file   = the exact path you uploaded to in Step 1 (required)
        size   = rough file size, or "" (optional)
        date   = when you added it, or "" (optional)
@@ -65,8 +65,17 @@ const MATERIALS = {
 
   "semester-3": {
     label: "Semester 3",
-    subtitle: "Probability, statistics and discrete structures",
+    subtitle: "Engineering Mathematics III — Laplace transforms, complex analysis and Fourier series",
     items: [
+      { title: "Unit I — Laplace Transform (Lecture Notes)",
+        code: "Engg. Maths III", type: "Notes",
+        file: "materials/semester-3/Laplace_Transform_Notes.pdf",
+        size: "320 KB · 34 pages", date: "Aug 2026" },
+
+      { title: "Two-Mark Questions & Answers — Part A Question Bank",
+        code: "Engg. Maths III", type: "Question Bank",
+        file: "materials/semester-3/Engineering_Mathematics_III_2Marks_QA.pdf",
+        size: "207 KB · 9 pages", date: "Aug 2026" },
     ]
   },
 
@@ -79,12 +88,27 @@ const MATERIALS = {
 
   "semester-5": {
     label: "Semester 5",
-    subtitle: "Probability and Random Processes (AI-enhanced syllabus)",
+    subtitle: "Probability & Random Processes (MAT303) and Statistical Methods (MAT307R01)",
     items: [
-      { title: "Normal Distribution — Theory, Solved Problems and Normal Curves",
-        code: "Unit I", type: "Slides",
-        file: "materials/semester-5/Normal-Distribution-Combined.pdf",
-        size: "304 KB", date: "Aug 2026" },
+      { title: "Unit I — Theory of Probability (Consolidated Lecture Notes)",
+        code: "MAT303", type: "Notes",
+        file: "materials/semester-5/Probability_Random_Processes_Unit1.pdf",
+        size: "1.4 MB · 67 pages", date: "Aug 2026" },
+
+      { title: "Two-Mark Questions — Probability, Distributions, Hypothesis Testing & Random Processes",
+        code: "MAT303", type: "Question Bank",
+        file: "materials/semester-5/PRP-2marks.pdf",
+        size: "230 KB · 16 pages", date: "Aug 2026" },
+
+      { title: "Unit I — Statistical Methods (Lecture Notes)",
+        code: "MAT307R01", type: "Notes",
+        file: "materials/semester-5/Statistical_Methods_Notes_Unit_1.pdf",
+        size: "1.2 MB · 69 pages", date: "Aug 2026" },
+
+      { title: "Two-Mark Questions — Dispersion, Distributions, Sample Tests, ANOVA & Regression",
+        code: "MAT307R01", type: "Question Bank",
+        file: "materials/semester-5/SM-2marks.pdf",
+        size: "228 KB · 16 pages", date: "Aug 2026" },
     ]
   },
 

@@ -20,7 +20,9 @@ rel="stylesheet"/>
      STEP 1 — Upload the file to GitHub
        Go to your repository on github.com, open the folder
        materials/semester-1/  (or semester-2, semester-3, semester-4,
-       semester-5, mtech-semester-1 — whichever you want), click
+       mtech-semester-1, or for Semester 5 the course folder
+       semester-5/MAT303-Probability-Random-Processes/ or
+       semester-5/MAT307R01-Statistical-Methods/), click
        "Add file" -> "Upload files", drag your PDF in, then "Commit changes".
        Tip: name files without spaces, e.g.  unit-1-matrices.pdf
 
@@ -45,7 +47,7 @@ rel="stylesheet"/>
 
      STEP 3 — Commit index.html. The page updates itself. Done.
 
-     To add a whole new semester, copy one of the six blocks below and
+     To add a whole new semester, copy one of the blocks below and
      give it a new key. To hide a semester, delete its block.
      ═══════════════════════════════════════════════════════════════════════ -->
 <script>
@@ -132,71 +134,78 @@ const MATERIALS = {
     ]
   },
 
-  "semester-5": {
-    label: "Semester 5",
-    subtitle: "Probability & Random Processes (MAT303) and Statistical Methods (MAT307R01)",
+  "semester-5-mat303": {
+    label: "Semester 5 · MAT303",
+    subtitle: "MAT303 — Probability & Random Processes",
     items: [
       { title: "Unit I — Theory of Probability (Consolidated Lecture Notes)",
         topic: "Probability Theory",
         code: "MAT303", type: "Notes",
-        file: "materials/semester-5/Probability_Random_Processes_Unit1.pdf",
+        file: "materials/semester-5/MAT303-Probability-Random-Processes/Probability_Random_Processes_Unit1.pdf",
         size: "1.4 MB · 67 pages", date: "Aug 2026" },
 
       { title: "Random Processes — Basics (Lecture Notes)",
         topic: "Random Processes — Basics",
         code: "MAT303", type: "Notes",
-        file: "materials/semester-5/RP-Basics-Notes.pdf",
+        file: "materials/semester-5/MAT303-Probability-Random-Processes/RP-Basics-Notes.pdf",
         size: "416 KB", date: "Sept 2026" },
 
       { title: "Unit III — Random Processes", topic: "Random Processes",
         code: "MAT303", type: "Notes",
-        file: "materials/semester-5/PRP_Unit_3_RPs.pdf",
+        file: "materials/semester-5/MAT303-Probability-Random-Processes/PRP_Unit_3_RPs.pdf",
         size: "272 KB", date: "Sept 2026" },
 
       { title: "Unit IV — Special Random Processes", topic: "Special Random Processes",
         code: "MAT303", type: "Notes",
-        file: "materials/semester-5/PRP_Unit_IV_Special_RP.pdf",
+        file: "materials/semester-5/MAT303-Probability-Random-Processes/PRP_Unit_IV_Special_RP.pdf",
         size: "140 KB", date: "Sept 2026" },
 
       { title: "Testing of Hypotheses — for Probability & Random Processes",
         topic: "Testing of Hypotheses (P&RP)",
         code: "MAT303", type: "Notes",
-        file: "materials/semester-5/Testing_of_Hypotheses_P_RP.pdf",
+        file: "materials/semester-5/MAT303-Probability-Random-Processes/Testing_of_Hypotheses_P_RP.pdf",
         size: "354 KB", date: "Sept 2026" },
 
       { title: "Two-Mark Questions — Probability, Distributions, Hypothesis Testing & Random Processes",
         topic: "Question Bank — Probability & Random Processes",
         code: "MAT303", type: "Question Bank",
-        file: "materials/semester-5/PRP-2marks.pdf",
+        file: "materials/semester-5/MAT303-Probability-Random-Processes/PRP-2marks.pdf",
         size: "230 KB · 16 pages", date: "Aug 2026" },
 
+    ]
+  },
+
+  "semester-5-mat307r01": {
+    label: "Semester 5 · MAT307R01",
+    subtitle: "MAT307R01 — Statistical Methods",
+    items: [
       { title: "Unit I — Measures of Central Tendency & Dispersion",
         topic: "Measures of Central Tendency & Dispersion",
         code: "MAT307R01", type: "Notes",
-        file: "materials/semester-5/Statistical_Methods_Notes_Unit_1.pdf",
+        file: "materials/semester-5/MAT307R01-Statistical-Methods/Statistical_Methods_Notes_Unit_1.pdf",
         size: "1.2 MB · 69 pages", date: "Aug 2026" },
 
       { title: "Unit III — Non-parametric Tests", topic: "Non-parametric Tests",
         code: "MAT307R01", type: "Notes",
-        file: "materials/semester-5/Unit-3-Full-Notes-latest.pdf",
+        file: "materials/semester-5/MAT307R01-Statistical-Methods/Unit-3-Full-Notes-latest.pdf",
         size: "380 KB", date: "Sept 2026" },
 
       { title: "Unit IV — Correlation, Regression & SQC",
         topic: "Correlation, Regression & SQC",
         code: "MAT307R01", type: "Notes",
-        file: "materials/semester-5/SM_Unit4_Correlation_Regression_SQC.pdf",
+        file: "materials/semester-5/MAT307R01-Statistical-Methods/SM_Unit4_Correlation_Regression_SQC.pdf",
         size: "273 KB", date: "Sept 2026" },
 
       { title: "Testing of Hypotheses — for Statistical Methods",
         topic: "Testing of Hypotheses (Statistical Methods)",
         code: "MAT307R01", type: "Notes",
-        file: "materials/semester-5/Testing_of_Hypotheses.pdf",
+        file: "materials/semester-5/MAT307R01-Statistical-Methods/Testing_of_Hypotheses.pdf",
         size: "365 KB", date: "Sept 2026" },
 
       { title: "Two-Mark Questions — Dispersion, Distributions, Sample Tests, ANOVA & Regression",
         topic: "Question Bank — Statistical Methods",
         code: "MAT307R01", type: "Question Bank",
-        file: "materials/semester-5/SM-2marks.pdf",
+        file: "materials/semester-5/MAT307R01-Statistical-Methods/SM-2marks.pdf",
         size: "228 KB · 16 pages", date: "Aug 2026" },
     ]
   },
